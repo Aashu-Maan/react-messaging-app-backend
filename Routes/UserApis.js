@@ -53,9 +53,8 @@ userRouter.post("/login", async (req, res) => {
       // ✅ set cookie with proper options
       res.cookie("token", token, {
         httpOnly: true,
-        secure: false,
-        sameSite: "Lax",
-        maxAge: 60 * 60 * 1000
+        secure: true,
+        sameSite: "none"
       });
 
       return res.json({
